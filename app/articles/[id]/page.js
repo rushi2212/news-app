@@ -64,8 +64,9 @@ const articles = [
   },
 ];
 
-export default function ArticlePage({ params }) {
-  const articleId = parseInt(params.id);
+export default async function ArticlePage({ params }) {
+  const { id } = await params;
+  const articleId = await parseInt(id);
   const article = articles.find((article) => article.id === articleId);
 
   if (!article) {

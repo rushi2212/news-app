@@ -75,8 +75,8 @@ const categories = {
   },
 };
 
-export default function CategoryPage({ params }) {
-  const { slug } = params;
+export default async function CategoryPage({ params }) {
+  const { slug } = await params;
 
   if (!categories[slug]) {
     return notFound();
